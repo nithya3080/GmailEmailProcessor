@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - ./database:/usr/src/app/database  # Mount only the database folder
+      - ./credentials:/usr/src/app/credentials  # Mount only the credentials folder
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/usr/src/test_app/credentials.json
+    command: python test_app/fetch_emails.py
