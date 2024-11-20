@@ -1,5 +1,4 @@
 from test_app.process_emails import process_emails
-# from test_app.perform_actions import mark_as_read, move_message
 from test_app.models import Email, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

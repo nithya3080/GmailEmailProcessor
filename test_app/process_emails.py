@@ -1,6 +1,6 @@
-from test_app.models import Session, Email
+from models import Session, Email
 from sqlalchemy import or_, and_
-from test_app.utils.gmail_auth import authenticate_gmail
+from utils.gmail_auth import authenticate_gmail
 import json
 
 

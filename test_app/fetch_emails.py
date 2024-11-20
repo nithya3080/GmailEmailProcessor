@@ -1,6 +1,6 @@
-from test_app.models import Email, create_tables, Session
+from models import Email, create_tables, Session
 from datetime import datetime
-from test_app.utils.gmail_auth import authenticate_gmail
+from utils.gmail_auth import authenticate_gmail
 
 
 def fetch_and_store_emails():
