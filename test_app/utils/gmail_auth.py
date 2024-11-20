@@ -8,8 +8,8 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 SCOPES = ['https://www.googleapis.com/auth/gmail.modify']
 
 
+# Authenticate to Gmail API using OAuth2
 def authenticate_gmail():
-    """Authenticate to Gmail API using OAuth2."""
     creds = None
     # Check if token.json exists
     if os.path.exists('token.json'):
@@ -21,7 +21,7 @@ def authenticate_gmail():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'test_app/credentials.json', SCOPES)  # This should be your correct credentials file
+                'test_app/credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
 
         # Save the credentials for future runs

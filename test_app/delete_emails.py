@@ -1,7 +1,6 @@
 from models import Session, Email
 
 def delete_all_emails():
-    """Delete all entries from the Email table."""
     session = Session()
     try:
         # Delete all rows in the Email table

@@ -3,13 +3,13 @@
         {
             "field": "From",
             "predicate": "contains",
-            "value": "no-reply@accounts.google.com",
+            "value": "noreply@github.com",
             "actions": ["mark_as_read"]
         },
         {
             "field": "Subject",
             "predicate": "equals",
-            "value": "Nithya, you have new application updates this week",
+            "value": "Security alert",
             "actions": ["move_to:IMPORTANT"]
         }
     ]

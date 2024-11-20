@@ -3,8 +3,6 @@ from test_app.fetch_emails import fetch_and_store_emails
 from test_app.models import Email, Session
 
 def test_fetch_emails(mocker):
-    """Test that emails are fetched and stored correctly."""
-    # Mock the Gmail API service
     mock_service = mocker.Mock()
     mock_messages = {
         'messages': [

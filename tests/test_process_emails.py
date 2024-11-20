@@ -7,7 +7,7 @@ import pytest
 
 @pytest.fixture(scope='function')
 def test_session():
-    """Set up a temporary SQLite database for testing."""
+    # Set up a temporary SQLite database for testing
     engine = create_engine('sqlite:///:memory:')
     Base.metadata.create_all(engine)  # Create tables
     Session = sessionmaker(bind=engine)
@@ -18,7 +18,7 @@ def test_session():
 
 @pytest.fixture
 def setup_test_data(test_session):
-    """Add test data to the database."""
+    # Add test data to the database.
     email = Email(
         id='123',
         sender='test@example.com',
@@ -31,7 +31,7 @@ def setup_test_data(test_session):
     test_session.commit()
 
 def test_process_emails(mocker, test_session, setup_test_data):
-    """Test that emails are processed correctly based on rules."""
+    # Test that emails are processed correctly based on rules
     mocker.patch('test_app.process_emails.mark_as_read', return_value=None)
     mocker.patch('test_app.process_emails.move_message', return_value=None)
 

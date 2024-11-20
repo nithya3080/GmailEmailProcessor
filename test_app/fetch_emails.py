@@ -4,7 +4,6 @@ from utils.gmail_auth import authenticate_gmail
 
 
 def fetch_and_store_emails():
-    """Fetch emails using Gmail API and store them in the database."""
     service = authenticate_gmail()  # Authenticate with Gmail API
     create_tables()  # Ensure tables are created
 
@@ -34,9 +33,9 @@ def fetch_and_store_emails():
             subject=subject,
             message=message_body,
             received_datetime=received_datetime,
-            labels=label_ids_str  # Store label IDs
+            labels=label_ids_str
         )
-        session.merge(email)  # Upsert operation
+        session.merge(email)
     session.commit()
     session.close()
 
